@@ -97,7 +97,7 @@ class ActiveStorage::Variation
       method_name = name.to_s.gsub("-","_")
 
       unless ActiveStorage.supported_image_processing_methods.any? { |method| method_name == method }
-        raise UnsupportedImageProcessingMethod, <<~ERROR.squish
+        raise UnsupportedImageProcessingMethod, <<-ERROR.squish
           One or more of the provided transformation methods is not supported.
         ERROR
       end
